@@ -1,2 +1,12 @@
 # Hospitel
-Dockor, user, shift and reserveshion 
+Docktor, user, shift and reserveshion 
+
+
+Mediator , uniofwork, Generic repos, command and command Handler (cqrs )
+
+
+
+
+
+
+
