@@ -23,6 +23,13 @@ namespace Hospital.Web.Controllers.Controllers
         {
             _mediator = _madiator;
         }
+
+
+        /// <summary>
+        /// برای ثبت نام کاریر 
+        /// </summary>
+        /// <param name="RegisterUser"></param>
+        /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
         [HttpPost]
         public async Task<ActionResult<ServiceResult<string>>> RegisterUser([FromBody] RegisterUserDto input)
         {
@@ -32,6 +39,13 @@ namespace Hospital.Web.Controllers.Controllers
         }
 
 
+
+
+        /// <summary>
+        /// برای ورود کاریر 
+        /// </summary>
+        /// <param name="logIn"></param>
+        /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
 
         [HttpPost("logIn")]
         public async Task<ActionResult<ServiceResult<string>>> LogIn([FromBody] LoginInputDto input)
@@ -46,8 +60,14 @@ namespace Hospital.Web.Controllers.Controllers
 
 
 
+        /// <summary>
+        /// برای گرفتن لیست دکتر ها 
+        /// </summary>
+        /// <param name="Dockters"></param>
+        /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+
         [HttpGet("Dockters")]
-     ///   [Authorize(Roles = "user")]
+        [Authorize(Roles = "user")]
         public async Task<ActionResult<ServiceResult<List<DocktersResultDto>>>> GetDockters()
         {
             var command = new GetDocktersQuery();
@@ -57,9 +77,16 @@ namespace Hospital.Web.Controllers.Controllers
 
 
 
+
+
+        /// <summary>
+        /// دیدن وقت های دکتر ها 
+        /// </summary>
+        /// <param name="GetDockterShift"></param>
+        /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
         [HttpGet("{dockterId}")]
-      //  [Authorize(Roles = "user")]
-        public async Task<ActionResult<ServiceResult<DockterReservationDto>>> GetDockterReservation([FromRoute] string dockterId)
+        [Authorize(Roles = "user")]
+        public async Task<ActionResult<ServiceResult<DockterReservationDto>>> GetDockterShift([FromRoute] string dockterId)
         {
             var command = new GetDockterReservation(dockterId);
             var result = await _mediator.Send<ServiceResult<DockterReservationDto>>(command);
@@ -68,8 +95,16 @@ namespace Hospital.Web.Controllers.Controllers
 
 
 
+
+
+         /// <summary>
+        /// گرفتن وقت با دکتر  
+        /// </summary>
+        /// <param name="GetDockterShift"></param>
+        /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+
         [HttpPost]
-     //   [Authorize(Roles = "user")]
+        [Authorize(Roles = "user")]
         public async Task<ActionResult<ServiceResult<string>>> MakeReservation([FromBody] Hospital.DtoModels.MakeReservationInputDto input)
         {
             var command = input.Adapt<MakeReservationCommand>();
@@ -79,12 +114,36 @@ namespace Hospital.Web.Controllers.Controllers
 
 
 
+
+
+        /// <summary>
+        /// دیدن وقت های من   
+        /// </summary>
+        /// <param name="GetDockterShift"></param>
+        /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
         [HttpPost]
-       /// [Authorize(Roles = "user")]
+        [Authorize(Roles = "user")]
         public async Task<ActionResult<ServiceResult<GetMyReserveshionDto>>> GetMyReserveshionTime(string userId)
         {
             var command = new GetMyReserveshionTime(userId);
             var result = await _mediator.Send<ServiceResult<GetMyReserveshionDto>>(command);
+            return await result?.AsyncResult();
+        }
+
+
+
+
+        /// <summary>
+        /// بیگیری نوبت دکتر با شماره بیگیری    
+        /// </summary>
+        /// <param name="GetDockterShift"></param>
+        /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        [HttpPost]
+        [Authorize(Roles = "user")]
+        public async Task<ActionResult<ServiceResult<ReservationDto>>> GeReserveshionTimebyTrackingCode(string trackingCode)
+        {
+            var command = new GeReserveshionTimebyTrackingCodeQuey(trackingCode);
+            var result = await _mediator.Send<ServiceResult<ReservationDto>>(command);
             return await result?.AsyncResult();
         }
 

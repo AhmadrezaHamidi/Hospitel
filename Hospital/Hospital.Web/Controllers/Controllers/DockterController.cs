@@ -25,6 +25,14 @@ namespace Hospital.Web.Controllers.Controllers
             _mediator = _madiator;
         }
 
+
+
+
+        /// <summary>
+        /// ثبت نام دکتر   
+        /// </summary>
+        /// <param name="GetDockterShift"></param>
+        /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
         [HttpPost]
         public async Task<ActionResult<ServiceResult<string>>> RegisterDoctor([FromBody] RegisteDoctorDto input)
         {
@@ -35,8 +43,15 @@ namespace Hospital.Web.Controllers.Controllers
 
 
 
+
+
+        /// <summary>
+        /// درست کردن شیفت های دکنر    
+        /// </summary>
+        /// <param name="GetDockterShift"></param>
+        /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
         [HttpPost]
-       /// [Authorize(Roles = "doctor")]
+        [Authorize(Roles = "doctor")]
         public async Task<ActionResult<ServiceResult<string>>> CreateShift([FromBody] CreateShiftDto input)
         {
             var command = input.Adapt<CreateShiftCommand>();
@@ -48,8 +63,16 @@ namespace Hospital.Web.Controllers.Controllers
 
 
 
+
+
+
+        /// <summary>
+        /// گرقتن شیفت های دکتر     
+        /// </summary>
+        /// <param name="GetDockterShift"></param>
+        /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
         [HttpGet]
-      ///  [Authorize(Roles = "doctor")]
+        [Authorize(Roles = "doctor")]
         public async Task<ActionResult<ServiceResult<List<ShiftResultDto>>>> GetShiftes()
         {
             var command = new GetShiftesQuery();
@@ -59,8 +82,15 @@ namespace Hospital.Web.Controllers.Controllers
 
 
 
+
+
+        /// <summary>
+        /// کدفتن وقت برای مریض توسط دکتر      
+        /// </summary>
+        /// <param name="GetDockterShift"></param>
+        /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
         [HttpPost]
-       /// [Authorize(Roles = "doctor")]
+        [Authorize(Roles = "doctor")]
         public async Task<ActionResult<ServiceResult<string>>> MakeReservation([FromBody] MakeReservationInputDto input)
         {
             var command = input.Adapt<MakeReservationCommand>();
