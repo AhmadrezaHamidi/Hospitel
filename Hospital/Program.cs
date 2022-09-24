@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Hospital.Infrastructure.Data.Context;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Hospital.Infrastructure.Cryptography;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,9 +49,12 @@ builder.Services.AddControllers();
 
 
 builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<TokenGenerator>();
 builder.Services.AddScoped<DoctorRepository>();
 builder.Services.AddScoped<ReservationRepository>();
 builder.Services.AddScoped<ShiftRepository>();
+builder.Services.AddSingleton<IAES, AesOperator>();
+
 builder.Services.AddMediatR(typeof(Program).GetTypeInfo().Assembly);
 
 builder.Services.AddEndpointsApiExplorer();

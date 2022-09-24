@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Hospital.Repository;
@@ -27,6 +28,10 @@ public class UserRepository
     public UserEntity GetUser(string id)
     {
         return db.GetRowById(id);
+    }
+    public UserEntity GetUserWitheNationaCode(string nationaCode)
+    {
+        return db.Get().ToList().FirstOrDefault(x => x.NationaCode.Equals(nationaCode));
     }
 
     public bool IsNotExist(string firstName, string lastName)

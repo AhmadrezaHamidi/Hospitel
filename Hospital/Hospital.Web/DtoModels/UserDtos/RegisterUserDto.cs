@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using System.ComponentModel.DataAnnotations;
 
 namespace Hospital.DtoModels.UserDtos
@@ -10,6 +11,11 @@ namespace Hospital.DtoModels.UserDtos
         public string LastName { get; set; }
         [Required]
         public string NationaCode { get; set; }
+
+        [Required]
+        [MinLength(16)]
+        public string PassWord { get; set; }
+
     }
 
 

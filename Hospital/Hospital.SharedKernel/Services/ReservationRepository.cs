@@ -1,6 +1,5 @@
-using Clinic_management_api.DtoModels;
+
 using Hospital.Core;
-using Hospital.DtoModels;
 using Hospital.Infrastructure.UnitOfWork;
 
 namespace Hospital.Services;

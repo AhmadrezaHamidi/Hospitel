@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ahmadhfr/Documents/Hospital/Hospital.csproj": {}
+    "/Users/ahmadhfr/Documents/work/Hospitel/Hospital/Hospital.csproj": {}
   },
   "projects": {
-    "/Users/ahmadhfr/Documents/Hospital/Hospital.csproj": {
+    "/Users/ahmadhfr/Documents/work/Hospitel/Hospital/Hospital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmadhfr/Documents/Hospital/Hospital.csproj",
+        "projectUniqueName": "/Users/ahmadhfr/Documents/work/Hospitel/Hospital/Hospital.csproj",
         "projectName": "Hospital",
-        "projectPath": "/Users/ahmadhfr/Documents/Hospital/Hospital.csproj",
+        "projectPath": "/Users/ahmadhfr/Documents/work/Hospitel/Hospital/Hospital.csproj",
         "packagesPath": "/Users/ahmadhfr/.nuget/packages/",
-        "outputPath": "/Users/ahmadhfr/Documents/Hospital/obj/",
+        "outputPath": "/Users/ahmadhfr/Documents/work/Hospitel/Hospital/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ahmadhfr/.nuget/NuGet/NuGet.Config"

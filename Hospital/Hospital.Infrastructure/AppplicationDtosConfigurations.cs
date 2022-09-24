@@ -2,6 +2,7 @@ using Hospital.Core;
 using Hospital.DtoModels;
 using Hospital.DtoModels.UserDtos;
 using Hospital.SharedKernel.Commands;
+using Hospital.Web.DtoModels;
 using Mapster;
 
 namespace Hospital.Infrastructure
@@ -19,6 +20,8 @@ namespace Hospital.Infrastructure
             ConfigFor_CreateShiftDto_CreateShiftCommand();
             ConfigFor_ShiftEntity_CreateShiftCommand();
             ConfigFor_MakeReservationInputDto_MakeReservationCommand();
+            ConfigFor_DoctorEntity_DocktersResultDto();
+            ConfigFor_ShiftEntity_ShiftReserveshionResultDto();
         }
 
         private AppplicationDtosConfigurations ConfigFor_CreateCommentDto_CommentEntity()
@@ -27,7 +30,8 @@ namespace Hospital.Infrastructure
                 .NewConfig()
                 .Map(x => x.FirstName, x => x.FirstName)
                 .Map(x => x.LastName, x => x.LastName)
-                .Map(x => x.NationaCode, x => x.NationaCode);
+                .Map(x => x.NationaCode, x => x.NationaCode)
+                .Map(x => x.PassWord, x => x.PassWord);
             return this;
         }
 
@@ -53,7 +57,7 @@ namespace Hospital.Infrastructure
         }
 
 
-         private AppplicationDtosConfigurations ConfigFor_ShiftEntity_CreateShiftCommand()
+        private AppplicationDtosConfigurations ConfigFor_ShiftEntity_CreateShiftCommand()
         {
             TypeAdapterConfig<ShiftEntity, ShiftResultDto>
                 .NewConfig()
@@ -68,7 +72,20 @@ namespace Hospital.Infrastructure
         }
 
 
-         private AppplicationDtosConfigurations ConfigFor_MakeReservationInputDto_MakeReservationCommand()
+
+        private AppplicationDtosConfigurations ConfigFor_ShiftEntity_ShiftReserveshionResultDto()
+        {
+            TypeAdapterConfig<ShiftEntity, ShiftReserveshionResultDto>
+                .NewConfig()
+                .Map(x => x.WorkDay, x => x.WorkDay)
+                .Map(x => x.Start, x => x.Start)
+                .Map(x => x.End, x => x.End)
+                .Map(x => x.Sance, x => x.Sance);
+            return this;
+        }
+
+
+        private AppplicationDtosConfigurations ConfigFor_MakeReservationInputDto_MakeReservationCommand()
         {
             TypeAdapterConfig<MakeReservationInputDto, MakeReservationCommand>
                 .NewConfig()
@@ -78,7 +95,21 @@ namespace Hospital.Infrastructure
                 ;
             return this;
         }
-    
+
+
+
+
+        private AppplicationDtosConfigurations ConfigFor_DoctorEntity_DocktersResultDto()
+        {
+            TypeAdapterConfig<DoctorEntity, DocktersResultDto>
+                .NewConfig()
+                .Map(x => x.Id, x => x.Id)
+                .Map(x => x.FirstName, x => x.FirstName)
+                .Map(x => x.LastName, x => x.LastName)
+                .Map(x => x.Specialty, x => x.Specialty)
+                ;
+            return this;
+        }
 
     }
 }

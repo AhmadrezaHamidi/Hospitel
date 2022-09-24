@@ -8,6 +8,7 @@ namespace Hospital.Core
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Specialty { get; set; }
+        public string Role { get; set; }
 
         public DoctorEntity(string firstName, string lastName, string specialty)
         {
@@ -17,6 +18,7 @@ namespace Hospital.Core
             FirstName = firstName;
             LastName = lastName;
             Specialty = specialty;
+            Role = "doctor";
         }
     }
 }

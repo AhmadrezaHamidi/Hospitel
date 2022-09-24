@@ -84,6 +84,18 @@ public class ApplicationContext : DbContext ,IDesignTimeDbContextFactory<Applica
             .HasDefaultValue(null);
      
 
+        modelBuilder.Entity<UserEntity>()
+            .Property(prop => prop.Password)
+            .IsRequired();
+
+
+
+         
+        modelBuilder.Entity<UserEntity>()
+            .Property(prop => prop.Role)
+            .IsRequired();   
+     
+
 
 
 
@@ -122,6 +134,12 @@ public class ApplicationContext : DbContext ,IDesignTimeDbContextFactory<Applica
             .HasMaxLength(50);
 
 
+        modelBuilder.Entity<DoctorEntity>()
+            .Property(prop => prop.Role)
+            .IsRequired()
+            ;
+
+
 
        
         modelBuilder.Entity<ReservationEntity>()
@@ -144,7 +162,7 @@ public class ApplicationContext : DbContext ,IDesignTimeDbContextFactory<Applica
 
         modelBuilder.Entity<ReservationEntity>()
             .Property(prop => prop.UserId)
-            .IsRequired();
+            .HasDefaultValue(null);
 
 
             modelBuilder.Entity<ReservationEntity>()
@@ -154,7 +172,7 @@ public class ApplicationContext : DbContext ,IDesignTimeDbContextFactory<Applica
 
             
             modelBuilder.Entity<ReservationEntity>()
-            .Property(prop => prop.Done)
+            .Property(prop => prop.IsDone)
             .HasDefaultValue(false);
 
 
