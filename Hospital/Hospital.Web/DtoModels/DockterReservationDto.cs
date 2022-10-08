@@ -1,9 +1,9 @@
 using System.Security.AccessControl;
 namespace Hospital.Web.DtoModels
 {
-    public class DockterReservationDto
+    public class DoctorReservationDto
     {
-        public DockterReservationDto(List<ReservationDto> fullSinceList, List<ReservationDto> openSinceList)
+        public DoctorReservationDto(List<ReservationDto> fullSinceList, List<ReservationDto> openSinceList)
         {
             FullSinceList = fullSinceList;
             OpenSinceList = openSinceList;

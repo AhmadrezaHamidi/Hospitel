@@ -20,7 +20,7 @@ namespace Hospital.Infrastructure
             ConfigFor_CreateShiftDto_CreateShiftCommand();
             ConfigFor_ShiftEntity_CreateShiftCommand();
             ConfigFor_MakeReservationInputDto_MakeReservationCommand();
-            ConfigFor_DoctorEntity_DocktersResultDto();
+            ConfigFor_DoctorEntity_DoctorsResultDto();
             ConfigFor_ShiftEntity_ShiftReserveshionResultDto();
         }
 
@@ -99,9 +99,9 @@ namespace Hospital.Infrastructure
 
 
 
-        private AppplicationDtosConfigurations ConfigFor_DoctorEntity_DocktersResultDto()
+        private AppplicationDtosConfigurations ConfigFor_DoctorEntity_DoctorsResultDto()
         {
-            TypeAdapterConfig<DoctorEntity, DocktersResultDto>
+            TypeAdapterConfig<DoctorEntity, DoctorsResultDto>
                 .NewConfig()
                 .Map(x => x.Id, x => x.Id)
                 .Map(x => x.FirstName, x => x.FirstName)

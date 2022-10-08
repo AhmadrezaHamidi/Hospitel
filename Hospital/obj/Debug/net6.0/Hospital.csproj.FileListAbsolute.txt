@@ -128,3 +128,5 @@
 /Users/ahmadhfr/Documents/work/Hospitel/Hospital/obj/Debug/net6.0/Hospital.pdb
 /Users/ahmadhfr/Documents/work/Hospitel/Hospital/obj/Debug/net6.0/Hospital.genruntimeconfig.cache
 /Users/ahmadhfr/Documents/work/Hospitel/Hospital/obj/Debug/net6.0/ref/Hospital.dll
+/Users/ahmadhfr/Documents/work/Hospitel/Hospital/bin/Debug/net6.0/Hospital.xml
+/Users/ahmadhfr/Documents/work/Hospitel/Hospital/obj/Debug/net6.0/Hospital.xml

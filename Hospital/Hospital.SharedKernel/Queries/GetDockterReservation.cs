@@ -5,9 +5,9 @@ using MediatR;
 
 namespace Hospital.SharedKernel.Queries
 {
-    public class GetDockterReservation : IRequest<ServiceResult<DockterReservationDto>>
+    public class GetDoctorReservation : IRequest<ServiceResult<DoctorReservationDto>>
     {
-        public GetDockterReservation(string docktorId)
+        public GetDoctorReservation(string docktorId)
         {
             DocktorId = docktorId;
         }
@@ -16,19 +16,19 @@ namespace Hospital.SharedKernel.Queries
         
     }
     
-    public class GetDockterReservationHandler : IRequestHandler<GetDockterReservation, ServiceResult<DockterReservationDto>>
+    public class GetDoctorReservationHandler : IRequestHandler<GetDoctorReservation, ServiceResult<DoctorReservationDto>>
     {
         protected readonly ReservationRepository _reservationRepository;
         protected readonly ShiftRepository _shiftRepository;
 
-        public GetDockterReservationHandler(ReservationRepository ReservationRepository,ShiftRepository ShiftRepository)
+        public GetDoctorReservationHandler(ReservationRepository ReservationRepository,ShiftRepository ShiftRepository)
         {
             _reservationRepository = ReservationRepository;
             _shiftRepository = ShiftRepository;
         }
 
 
-        public async Task<ServiceResult<DockterReservationDto>> Handle(GetDockterReservation request, CancellationToken cancellationToken)
+        public async Task<ServiceResult<DoctorReservationDto>> Handle(GetDoctorReservation request, CancellationToken cancellationToken)
         {
 
             var doctors = _reservationRepository.GetAll()
@@ -70,7 +70,7 @@ namespace Hospital.SharedKernel.Queries
 
 
 
-            var res =new DockterReservationDto(fullSinceInput,freeSinceInput);
+            var res =new DoctorReservationDto(fullSinceInput,freeSinceInput);
 
             return ServiceResult.Create(res);
         }

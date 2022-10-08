@@ -60,7 +60,9 @@ builder.Services.AddMediatR(typeof(Program).GetTypeInfo().Assembly);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -70,8 +72,11 @@ if (app.Environment.IsDevelopment())
     .Initialize();
 
     app.UseSwagger();
+    app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("v1/swagger.json", "My API V1");
+});
 
-    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

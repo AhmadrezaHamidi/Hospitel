@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hospital</name>
+    </assembly>
+    <members>
+        <member name="M:Hospital.Web.Controllers.Controllers.DoctorController.RegisterDoctor(Hospital.DtoModels.UserDtos.RegisteDoctorDto)">
+            <summary>
+            ثبت نام دکتر   
+            </summary>
+            <param name="GetDoctorShift"></param>
+            <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        </member>
+        <member name="M:Hospital.Web.Controllers.Controllers.DoctorController.CreateShift(Hospital.DtoModels.UserDtos.CreateShiftDto)">
+            <summary>
+            درست کردن شیفت های دکنر    
+            </summary>
+            <param name="GetDoctorShift"></param>
+            <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        </member>
+        <member name="M:Hospital.Web.Controllers.Controllers.DoctorController.GetShiftes">
+            <summary>
+            گرقتن شیفت های دکتر     
+            </summary>
+            <param name="GetDoctorShift"></param>
+            <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        </member>
+        <member name="M:Hospital.Web.Controllers.Controllers.DoctorController.MakeReservation(Hospital.DtoModels.MakeReservationInputDto)">
+            <summary>
+            کدفتن وقت برای مریض توسط دکتر      
+            </summary>
+            <param name="GetDoctorShift"></param>
+            <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        </member>
+        <member name="M:Hospital.Web.Controllers.Controllers.UserController.RegisterUser(Hospital.DtoModels.UserDtos.RegisterUserDto)">
+            <summary>
+            برای ثبت نام کاریر 
+            </summary>
+            <param name="RegisterUser"></param>
+            <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        </member>
+        <member name="M:Hospital.Web.Controllers.Controllers.UserController.LogIn(Hospital.Web.DtoModels.UserDtos.LoginInputDto)">
+            <summary>
+            برای ورود کاریر 
+            </summary>
+            <param name="logIn"></param>
+            <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        </member>
+        <member name="M:Hospital.Web.Controllers.Controllers.UserController.GetDoctors">
+            <summary>
+            برای گرفتن لیست دکتر ها 
+            </summary>
+            <param name="Doctors"></param>
+            <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        </member>
+        <member name="M:Hospital.Web.Controllers.Controllers.UserController.GetDoctorShift(System.String)">
+            <summary>
+            دیدن وقت های دکتر ها 
+            </summary>
+            <param name="GetDoctorShift"></param>
+            <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        </member>
+        <member name="M:Hospital.Web.Controllers.Controllers.UserController.MakeReservation(Hospital.DtoModels.MakeReservationInputDto)">
+            <summary>
+            گرفتن وقت با دکتر  
+            </summary>
+            <param name="GetDoctorShift"></param>
+            <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        </member>
+        <member name="M:Hospital.Web.Controllers.Controllers.UserController.GetMyReserveshionTime(System.String)">
+            <summary>
+            دیدن وقت های من   
+            </summary>
+            <param name="GetDoctorShift"></param>
+            <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        </member>
+        <member name="M:Hospital.Web.Controllers.Controllers.UserController.GeReserveshionTimebyTrackingCode(System.String)">
+            <summary>
+            بیگیری نوبت دکتر با شماره بیگیری    
+            </summary>
+            <param name="GetDoctorShift"></param>
+            <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
+        </member>
+    </members>
+</doc>

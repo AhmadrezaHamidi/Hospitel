@@ -1,6 +1,6 @@
 using Hospital.Core;
 using Hospital.Services;
-using MediatR;
+
 
 namespace Hospital.SharedKernel.Commands
 {

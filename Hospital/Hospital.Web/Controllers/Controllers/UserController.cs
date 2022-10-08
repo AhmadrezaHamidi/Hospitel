@@ -63,15 +63,15 @@ namespace Hospital.Web.Controllers.Controllers
         /// <summary>
         /// برای گرفتن لیست دکتر ها 
         /// </summary>
-        /// <param name="Dockters"></param>
+        /// <param name="Doctors"></param>
         /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
 
-        [HttpGet("Dockters")]
+        [HttpGet("Doctors")]
         [Authorize(Roles = "user")]
-        public async Task<ActionResult<ServiceResult<List<DocktersResultDto>>>> GetDockters()
+        public async Task<ActionResult<ServiceResult<List<DoctorsResultDto>>>> GetDoctors()
         {
-            var command = new GetDocktersQuery();
-            var result = await _mediator.Send<ServiceResult<List<DocktersResultDto>>>(command);
+            var command = new GetDoctorsQuery();
+            var result = await _mediator.Send<ServiceResult<List<DoctorsResultDto>>>(command);
             return await result?.AsyncResult();
         }
 
@@ -82,14 +82,14 @@ namespace Hospital.Web.Controllers.Controllers
         /// <summary>
         /// دیدن وقت های دکتر ها 
         /// </summary>
-        /// <param name="GetDockterShift"></param>
+        /// <param name="GetDoctorShift"></param>
         /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
-        [HttpGet("{dockterId}")]
+        [HttpGet("{DoctorId}")]
         [Authorize(Roles = "user")]
-        public async Task<ActionResult<ServiceResult<DockterReservationDto>>> GetDockterShift([FromRoute] string dockterId)
+        public async Task<ActionResult<ServiceResult<DoctorReservationDto>>> GetDoctorShift([FromRoute] string DoctorId)
         {
-            var command = new GetDockterReservation(dockterId);
-            var result = await _mediator.Send<ServiceResult<DockterReservationDto>>(command);
+            var command = new GetDoctorReservation(DoctorId);
+            var result = await _mediator.Send<ServiceResult<DoctorReservationDto>>(command);
             return await result?.AsyncResult();
         }
 
@@ -100,7 +100,7 @@ namespace Hospital.Web.Controllers.Controllers
          /// <summary>
         /// گرفتن وقت با دکتر  
         /// </summary>
-        /// <param name="GetDockterShift"></param>
+        /// <param name="GetDoctorShift"></param>
         /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
 
         [HttpPost]
@@ -119,7 +119,7 @@ namespace Hospital.Web.Controllers.Controllers
         /// <summary>
         /// دیدن وقت های من   
         /// </summary>
-        /// <param name="GetDockterShift"></param>
+        /// <param name="GetDoctorShift"></param>
         /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
         [HttpPost]
         [Authorize(Roles = "user")]
@@ -136,7 +136,7 @@ namespace Hospital.Web.Controllers.Controllers
         /// <summary>
         /// بیگیری نوبت دکتر با شماره بیگیری    
         /// </summary>
-        /// <param name="GetDockterShift"></param>
+        /// <param name="GetDoctorShift"></param>
         /// <returns>تایید با کد 200 یا عدم تایید با خطای 400</returns>
         [HttpPost]
         [Authorize(Roles = "user")]

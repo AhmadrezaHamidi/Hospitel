@@ -10,4 +10,5 @@ public class ReservationDateDto
     public DateTime examinationEndTime { get; set; }
     [Required]
     public Calender Calender { get; set; }
+        
 }

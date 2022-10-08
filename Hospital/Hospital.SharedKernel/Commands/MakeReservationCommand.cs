@@ -49,7 +49,7 @@ namespace Hospital.SharedKernel.Commands
                 throw new Exception("this shift is not exist");
 
             var istance = new ReservationEntity(request.UserId, request.DoctorId, request.ShiftId);
-            var res = _reservationRepository.AddReservation(istance);
+            var res = _reservationRepository.AddReservaghtion(istance);
             return ServiceResult.Create(res);
         }
     }

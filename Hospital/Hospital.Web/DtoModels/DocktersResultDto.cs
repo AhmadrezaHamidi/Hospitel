@@ -1,6 +1,6 @@
 namespace Hospital.Web.DtoModels
 {
-    public class DocktersResultDto
+    public class DoctorsResultDto
     {
         public string Id { get; set; }
         public string FirstName { get; set; }
